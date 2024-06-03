@@ -4,24 +4,67 @@
   box-sizing: border-box;
 }
 
-.button__purple {
-  border: unset;
-  background: #5f11e2;
-  color: #fff;
-  padding: 1rem 2rem 1rem 2rem;
+body {
+  background: #222;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
 }
 
-/* button {
-  border: unset;
-  background: #5f11e2;
-  color: #fff;
-  padding: 1rem 2rem 1rem 2rem;
+h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
 
-#button__purple {
-  border: unset;
-  background: #5f11e2;
+span {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.card {
+  max-width: 350px;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+/*1rem = 16px*/
+.button__primary {
+  all: unset;
+  border-radius: 0.5rem;
+  background: #491eff;
   color: #fff;
-  padding: 1rem 2rem 1rem 2rem;
-} */
+  padding: 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.mt-05 {
+  margin-top: 0.5rem;
+}
+
+.mb-05 {
+  margin-top: 0.5rem;
+}
