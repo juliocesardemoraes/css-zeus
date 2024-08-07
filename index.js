@@ -1,21 +1,19 @@
-// 1 - Declare uma variável chamada nome e atribua a ela seu nome completo como uma string.
-const nome = "Júlio César de Moraes Carvalho Filho";
-console.log("Exercício 1: O seu nome é " + nome);
+// 1. Declare uma variável chamada challenge e atribua o valor inicial 'Curso Aprenda do Zero'
 
-// 2 - Declare uma variável idade como um número inteiro representando sua idade.
-const idade = 28;
-console.log("Exercício 2: A sua idade é " + idade);
+// 2. Imprima a string no console do navegador usando console.log()
 
-// 3 - Concatene as variáveis nome e idade em uma string com a mensagem: "Meu nome é [nome] e eu tenho [idade] anos."
-const idadeENome = "Meu nome é " + nome + " e eu tenho " + idade + " anos.";
-const idadeENome2 = `Meu nome é ${nome} e eu tenho ${idade} anos.`;
-console.log("Exercício 3:", idadeENome);
-console.log("Exercício 3:", idadeENome2);
+// 3. Imprima o comprimento da string no console do navegador usando console.log()
 
-// 4 - Declare uma variável maiorDeIdade e atribua a ela true se idade for 18 ou mais, caso contrário, false.
-const maiorDeIdade = idade > 18;
-console.log("Exercício 4: É maior de idade?", maiorDeIdade);
+// 4. Altere todos os caracteres da string para letras maiúsculas usando o método toUpperCase()
 
-// 5 - Declare uma variável altura em metros (como um número decimal).
-const altura = 1.82;
-console.log("Exercício 5: Qual sua altura?", altura);
+// 5. Altere todos os caracteres da string para letras minúsculas usando o método toLowerCase()
+
+// 6. Verifique se a string contém a palavra "Script" usando o método includes()
+
+// 7. Altere 'Curso Aprenda do Zero' para 'Curso Aprenda do Um' usando o método replace()
+
+// 8. Qual é o caractere no índice 15 na string 'Curso de aprenda do zero' ? Use o método charAt()
+
+// 9. Qual é o código do caractere 'z' na string 'Curso de aprenda do zero' usando charCodeAt()
+
+// 10. Use trim() para remover qualquer espaço em branco no início e no final de uma string. Ex: ' Curso Aprenda do Zero '.
