@@ -1,99 +1,126 @@
-# Aprofundando em Strings
+# Aprofundando em Números
 
 ```
-No VSCODE é possível visualizar esse arquivo formatado pressionando ctrl + shift + v
+// No VSCODE é possível visualizar esse arquivo formatado pressionando ctrl + shift + v
 ```
 
-### 1. Declaração de Variáveis
+### 1. Soma de Dois Números
 
-Para declarar uma variável em JavaScript, usamos as palavras-chave `var`, `let` ou `const`. Aqui, usaremos `let` para declarar uma variável que pode ter seu valor alterado.
+Para somar dois números, declaramos duas variáveis numéricas e usamos o operador de soma (`+`).
 
 ```javascript
-let challenge = "Curso Aprenda Do Zero";
-let challenge2 = "Einstein disse: 'Eu sabo'";
+let num1 = 8;
+let num2 = 12;
+let sum = num1 + num2;
+console.log(sum);
 ```
 
-### 2. Imprimindo no Console
+### 2. Produto de Dois Números
 
-Para imprimir no console do navegador, utilizamos o método `console.log()`.
+Para multiplicar dois números, usamos o operador de multiplicação (`*`).
 
 ```javascript
-console.log(challenge);
+let num3 = 5;
+let num4 = 4;
+let product = num3 * num4;
+console.log(product);
 ```
 
-### 3. Comprimento da String
+### 3. Divisão e Resto
 
-O comprimento de uma string é obtido através da propriedade `length`.
+Para dividir dois números, usamos o operador de divisão (`/`). Para encontrar o resto, usamos o operador módulo (`%`).
 
 ```javascript
-console.log(challenge.length);
+let dividend = 29;
+let divisor = 6;
+let quotient = Math.floor(dividend / divisor);
+let remainder = dividend % divisor;
+console.log(quotient); // Quociente
+console.log(remainder); // Resto
 ```
 
-### 4. Convertendo para Maiúsculas
+### 4. Incremento e Decremento
 
-O método `toUpperCase()` é usado para converter todos os caracteres de uma string em letras maiúsculas.
+Para incrementar ou decrementar um número, usamos os operadores `++` e `--`, respectivamente.
 
 ```javascript
-let upperCaseChallenge = challenge.toUpperCase();
-console.log(upperCaseChallenge);
+let number = 10;
+number++;
+console.log(number); // Incremento
+
+number--;
+console.log(number); // Decremento
 ```
 
-### 5. Convertendo para Minúsculas
+### 5. Potenciação
 
-O método `toLowerCase()` é usado para converter todos os caracteres de uma string em letras minúsculas.
+Para elevar um número a uma potência, usamos o operador de exponenciação (`**`).
 
 ```javascript
-let lowerCaseChallenge = challenge.toLowerCase();
-console.log(lowerCaseChallenge);
+let base = 3;
+let exponent = 4;
+let power = base ** exponent;
+console.log(power);
 ```
 
-### 6. Verificar se uma String Contém uma Palavra
+### 6. Operador de Atribuição Composto
 
-O método `includes()` verifica se uma string contém uma determinada sequência de caracteres e retorna `true` ou `false`.
+Usamos operadores de atribuição compostos para realizar uma operação e atribuição em um único passo (`+=`, `-=`, `*=`, `/=`).
 
 ```javascript
-console.log(challenge.includes("Script"));
+let total = 100;
+total += 50; // Equivale a total = total + 50;
+console.log(total);
 ```
 
-### 7. Substituir Parte da String
+### 7. Conversão de String para Número
 
-O método `replace()` é usado para substituir uma parte da string por outra.
+Para converter uma string numérica para um número, usamos `Number()` ou `parseInt()`/`parseFloat()`.
 
 ```javascript
-let newChallenge = challenge.replace("Zero", "Um");
-console.log(newChallenge);
+let stringNumber = "45";
+let convertedNumber = Number(stringNumber);
+let result = convertedNumber + 5;
+console.log(result);
 ```
 
-### 8. Caractere em um Índice Específico
+### 8. Calculando a Média
 
-O método `charAt()` retorna o caractere em uma posição específica em uma string. Lembre-se de que o índice começa em 0.
+Para calcular a média de números, somamos todos e dividimos pelo número de elementos.
 
 ```javascript
-let specificString = "Curso de aprenda do zero";
-console.log(specificString.charAt(15));
+let num5 = 20;
+let num6 = 35;
+let num7 = 45;
+let average = (num5 + num6 + num7) / 3;
+console.log(average);
 ```
 
-### 9. Código do Caractere
+### 9. Reduzir um Número pela Metade
 
-O método `charCodeAt()` retorna o código Unicode do caractere em um índice específico.
+Para dividir um número pela metade, usamos o operador de divisão (`/`).
 
 ```javascript
-console.log(specificString.charCodeAt(specificString.indexOf("z")));
+let value = 88;
+let half = value / 2;
+console.log(half);
 ```
 
-### 10. Remover Espaços em Branco
+### 10. Calcular a Área de um Retângulo
 
-O método `trim()` remove os espaços em branco do início e do final de uma string.
+Para calcular a área de um retângulo, multiplicamos o comprimento pela largura.
 
 ```javascript
-let stringWithSpaces = " Curso Aprenda do Zero ";
-let trimmedString = stringWithSpaces.trim();
-console.log(trimmedString);
+let length = 7;
+let width = 5;
+let area = length * width;
+console.log(area);
 ```
 
 ### Conceitos Chave
 
-- **Declaração de variáveis**: `let` e `const` são preferíveis a `var` devido ao escopo de bloco.
-- **Strings**: São imutáveis em JavaScript; métodos de string retornam novos valores.
-- **Métodos de string**: `toUpperCase()`, `toLowerCase()`, `includes()`, `replace()`, `charAt()`, `charCodeAt()`, `trim()` são fundamentais para manipulação de texto.
+- **Operadores Matemáticos**: `+`, `-`, `*`, `/`, `%`, `**` para operações básicas e exponenciação.
+- **Operadores de Incremento/Decremento**: `++`, `--` para alterar o valor de uma variável em uma unidade.
+- **Operadores de Atribuição Composto**: `+=`, `-=`, `*=`, `/=` simplificam operações e atribuições.
+- **Conversão de Tipos**: `Number()`, `parseInt()`, `parseFloat()` para conversão de strings numéricas.
 - **Console**: `console.log()` é amplamente utilizado para depuração e saída de informações.

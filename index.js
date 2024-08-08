@@ -1,29 +1,29 @@
-// 1. Declare uma variável chamada challenge e atribua o valor inicial 'Curso Aprenda do Zero'
-let challenge = "Curso Aprenda do Zero          "; // OK
-// 2. Imprima a string no console do navegador usando console.log()
-console.log(challenge); //OK
+// Exercício 1: Soma de Dois Números
+// Declare duas variáveis numéricas, some-as e imprima o resultado no console.
 
-// 3. Imprima o comprimento da string no console do navegador usando console.log()
-console.log(challenge.length);
+// Exercício 2: Produto de Dois Números
+// Declare duas variáveis numéricas, multiplique-as e imprima o resultado no console.
 
-// 4. Altere todos os caracteres da string para letras maiúsculas usando o método toUpperCase()
-console.log(challenge.toUpperCase());
+// Exercício 3: Divisão e Resto
+// Divida um número por outro e imprima o resto.
 
-// 5. Altere todos os caracteres da string para letras minúsculas usando o método toLowerCase()
-console.log(challenge.toLowerCase());
+// Exercício 4: Incremento e Decremento
+// Incremente e depois decremente um número, imprimindo o valor a cada passo.
 
-// 6. Verifique se a string contém a palavra "Script" usando o método includes()
-console.log(challenge.includes("ZERO"));
+// Exercício 5: Potenciação
+// Calcule o resultado de um número elevado a outro número.
 
-// 7. Altere 'Curso Aprenda do Zero' para 'Curso Aprenda do Um' usando o método replace()
-console.log(challenge.replace("Zero", "Um"));
+// Exercício 6: Operador de Atribuição Composto
+// Use um operador de atribuição composto para somar e atribuir em uma mesma operação.
 
-// 8. Qual é o caractere no índice 15 na string 'Curso de aprenda do zero' ? Use o método charAt()
-console.log(challenge.charAt(15));
-console.log(challenge[15]);
+// Exercício 7: Conversão de String para Número
+// Converta uma string numérica para um número e faça uma operação aritmética com ela.
 
-// 9. Qual é o código do caractere 'z' na string 'Curso de aprenda do zero' usando charCodeAt()
-console.log(challenge.charCodeAt(17));
+// Exercício 8: Calcular a Área de um Retângulo
+// Calcule a área de um retângulo dado seu comprimento e largura.
 
-// 10. Use trim() para remover qualquer espaço em branco no início e no final de uma string. Ex: ' Curso Aprenda do Zero '.
-console.log(challenge.trim());
+// Exercício 9: Reduzir um Número pela Metade
+// Divida um número pela metade e imprima o resultado.
+
+// Exercício 10: Calculando a Média
+// Calcule a média de três números e imprima o resultado.
