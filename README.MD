@@ -1,5 +1,9 @@
 # Aprofundando em Strings
 
+```
+No VSCODE é possível visualizar esse arquivo formatado pressionando ctrl + shift + v
+```
+
 ### 1. Declaração de Variáveis
 
 Para declarar uma variável em JavaScript, usamos as palavras-chave `var`, `let` ou `const`. Aqui, usaremos `let` para declarar uma variável que pode ter seu valor alterado.
