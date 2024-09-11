@@ -16,11 +16,11 @@
 // 6. Função de Verificação de Paridade
 // Crie uma função chamada parouimpar que receba um número e retorne true se for par, false caso contrário.
 
-// 7. Função de Média
-// Crie uma função chamada media que receba um array de números e retorne a média.
-
-// 8. Função de Conversão para Celsius
+// 7. Função de Conversão para Celsius
 // Crie uma função chamada paraCelsius que converta uma temperatura de Fahrenheit para Celsius.
 
-// 9. Função de Contagem de Caracteres
-// Crie uma função chamada contarCaracteres que receba uma string e retorne um objeto com a contagem de cada caractere.
+// 8. Função de Contagem de Caracteres
+// Crie uma função chamada contarCaracteres que receba uma string e retorne um objeto com a contagem de todos os caracteres.
+
+// 9. Função de Média
+// Crie uma função chamada media que receba um array de números e retorne a média.
