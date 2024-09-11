@@ -1,26 +1,27 @@
-// 1. Função de Saudação
-// Crie uma função chamada saudacao que receba um nome como parâmetro e imprima "Olá, [nome]!" no console.
+console.log("Hello world!")
 
-// 2. Função de Subtração
-// Crie uma função chamada subtracao que receba dois números como parâmetros e retorne a diferença entre eles.
+// function soma(valor1, valor2){
+//     console.log(valor1 + valor2)
+// }
 
-// 3. Função de Multiplicação
-// Crie uma função chamada multiplicacao que receba dois números e retorne o produto deles.
+// soma(1, 2)
+// soma(3, 4)
 
-// 4. Função de Concatenar Strings
-// Crie uma função chamada concatenar que receba duas strings e retorne a concatenação delas.
 
-// 5. Função para Encontrar o Maior Número
-// Crie uma função chamada maiorNumero que receba dois números e retorne o maior deles.
+// function sejaBemVindo(nome,idade){
+//     console.log(`O seu nome é ${nome},  e sua idade é ${idade}`)
+// }
 
-// 6. Função de Verificação de Paridade
-// Crie uma função chamada parouimpar que receba um número e retorne true se for par, false caso contrário.
+// sejaBemVindo("Júlio", 28)
 
-// 7. Função de Média
-// Crie uma função chamada media que receba um array de números e retorne a média.
 
-// 8. Função de Conversão para Celsius
-// Crie uma função chamada paraCelsius que converta uma temperatura de Fahrenheit para Celsius.
 
-// 9. Função de Contagem de Caracteres
-// Crie uma função chamada contarCaracteres que receba uma string e retorne um objeto com a contagem de cada caractere.
+function multiplicacao(num1,num2){
+    const multi = num1 * num2;
+    console.log("Multi",multi)
+    return multi;
+}
+
+
+const retornoMulti = multiplicacao(2,2)
+console.log("REtorno", retornoMulti)
