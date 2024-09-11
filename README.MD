@@ -1,126 +1,177 @@
-# Aprofundando em Números
+# Funções em JavaScript
 
-```
-// No VSCODE é possível visualizar esse arquivo formatado pressionando ctrl + shift + v
-```
+## Introdução às Funções
 
-### 1. Soma de Dois Números
+1. **O que é uma Função?**
 
-Para somar dois números, declaramos duas variáveis numéricas e usamos o operador de soma (`+`).
+   - Um bloco de código projetado para realizar uma tarefa específica.
+   - É reutilizável e pode ser chamado sempre que necessário.
 
-```javascript
-let num1 = 8;
-let num2 = 12;
-let sum = num1 + num2;
-console.log(sum);
-```
+2. **Declaração de Função**
 
-### 2. Produto de Dois Números
+   - Sintaxe básica: `function nomeDaFuncao() { // código }`
+   - `function + nomeDaFuncao + () + {}`
+   - Exemplo:
+     ```javascript
+     function saudacao() {
+       console.log("Olá, mundo!");
+     }
+     saudacao();
+     ```
 
-Para multiplicar dois números, usamos o operador de multiplicação (`*`).
+3. **Chamando Funções**
+   - Executar uma função ao referenciá-la seguida de parênteses: `nomeDaFuncao();`
 
-```javascript
-let num3 = 5;
-let num4 = 4;
-let product = num3 * num4;
-console.log(product);
-```
+## Retorno de Funções
 
-### 3. Divisão e Resto
+1. **A Palavra-chave `return`**
 
-Para dividir dois números, usamos o operador de divisão (`/`). Para encontrar o resto, usamos o operador módulo (`%`).
+   - Usada para retornar um valor de uma função.
+   - Termina a execução da função.
+   - Exemplo:
+     ```javascript
+     function quadrado(n) {
+       return n * n;
+     }
+     ```
 
-```javascript
-let dividend = 29;
-let divisor = 6;
-let quotient = Math.floor(dividend / divisor);
-let remainder = dividend % divisor;
-console.log(quotient); // Quociente
-console.log(remainder); // Resto
-```
+2. **Funções Sem Retorno**
+   - Executam uma ação sem retornar um valor (retornam `undefined` implicitamente).
 
-### 4. Incremento e Decremento
+## Parâmetros e Argumentos
 
-Para incrementar ou decrementar um número, usamos os operadores `++` e `--`, respectivamente.
+1. **Definindo Parâmetros**
 
-```javascript
-let number = 10;
-number++;
-console.log(number); // Incremento
+   - Variáveis listadas na definição de uma função.
+   - Exemplo:
+     ```javascript
+     // Os paramêtros são a e b
+     function soma(a, b) {
+       return a + b;
+     }
+     ```
 
-number--;
-console.log(number); // Decremento
-```
+2. **Passando Argumentos**
 
-### 5. Potenciação
+   - Valores passados para a função quando ela é chamada.
+   - Exemplo:
+     ```javascript
+     // Os paramêtros são a e b
+     function soma(a, b) {
+       // a = 3
+       // b = 4
+       return a + b; // Retorna 7
+     }
+     let resultado = soma(3, 4); // Argumentos são 3 e 4
+     console.log(resultado); // Isso vai retornar 7
+     ```
 
-Para elevar um número a uma potência, usamos o operador de exponenciação (`**`).
+3. **Parâmetros Padrão**
 
-```javascript
-let base = 3;
-let exponent = 4;
-let power = base ** exponent;
-console.log(power);
-```
+   - Definidos para garantir que parâmetros tenham um valor padrão.
+   - Exemplo:
 
-### 6. Operador de Atribuição Composto
+     ```javascript
+     // Caso a função seja invocada sem nenhum valor o valor da variável b vai ser igual a 2
+     function multiplicar(a, b = 2) {
+       return a * b;
+     }
 
-Usamos operadores de atribuição compostos para realizar uma operação e atribuição em um único passo (`+=`, `-=`, `*=`, `/=`).
+     multiplicar(1); // Isso vai retornar o valor 2 pois é 1 x 2.
+     ```
 
-```javascript
-let total = 100;
-total += 50; // Equivale a total = total + 50;
-console.log(total);
-```
+## Funções Anônimas
 
-### 7. Conversão de String para Número
+1. **Definição**
 
-Para converter uma string numérica para um número, usamos `Number()` ou `parseInt()`/`parseFloat()`.
+   - Funções sem nome, atribuídas a variáveis ou usadas como argumentos.
+   - Exemplo:
 
-```javascript
-let stringNumber = "45";
-let convertedNumber = Number(stringNumber);
-let result = convertedNumber + 5;
-console.log(result);
-```
+     ```javascript
+     const saudacao = function () {
+       console.log("Olá, mundo!");
+     };
+     saudacao();
+     ```
 
-### 8. Calculando a Média
+## Arrow Functions
 
-Para calcular a média de números, somamos todos e dividimos pelo número de elementos.
+1. **Sintaxe e Definição**
 
-```javascript
-let num5 = 20;
-let num6 = 35;
-let num7 = 45;
-let average = (num5 + num6 + num7) / 3;
-console.log(average);
-```
+   - Introduzidas no ES6, são uma forma mais curta de escrever funções.
+   - Sintaxe básica: `const nomeFuncao = (parametros) => { // código }`
+   - Exemplo:
+     ```javascript
+     const soma = (a, b) => a + b;
+     ```
 
-### 9. Reduzir um Número pela Metade
+2. **Características**
 
-Para dividir um número pela metade, usamos o operador de divisão (`/`).
+   - `this` léxico: Não redefine o valor de `this` dentro da função.
+   - Não possuem `arguments`, `super`, ou `new.target`.
 
-```javascript
-let value = 88;
-let half = value / 2;
-console.log(half);
-```
+3. **Uso de Arrow Functions**
+   - Adequadas para callbacks e funções curtas.
+   - Exemplo:
+     ```javascript
+     const numeros = [1, 2, 3];
+     const dobrados = numeros.map((n) => n * 2);
+     ```
 
-### 10. Calcular a Área de um Retângulo
+## Funções Imediatamente Invocadas (IIFE)
 
-Para calcular a área de um retângulo, multiplicamos o comprimento pela largura.
+1. **Definição**
 
-```javascript
-let length = 7;
-let width = 5;
-let area = length * width;
-console.log(area);
-```
+   - Funções que são executadas assim que definidas.
+   - Sintaxe: `(function() { // código })();`
 
-### Conceitos Chave
+2. **Uso Comum**
+   - Evitar poluição do escopo global.
+   - Exemplo:
+     ```javascript
+     (function () {
+       console.log("IIFE executada!");
+     })();
+     ```
 
-- **Operadores Matemáticos**: `+`, `-`, `*`, `/`, `%`, `**` para operações básicas e exponenciação.
-- **Operadores de Incremento/Decremento**: `++`, `--` para alterar o valor de uma variável em uma unidade.
-- **Operadores de Atribuição Composto**: `+=`, `-=`, `*=`, `/=` simplificam operações e atribuições.
-- **Conversão de Tipos**: `Number()`, `parseInt()`, `parseFloat()` para conversão de strings numéricas.
-- **Console**: `console.log()` é amplamente utilizado para depuração e saída de informações.
+## Funções Assíncronas
+
+1. **Funções `async` e `await`**
+
+   - Funções declaradas com `async` retornam uma `Promise`.
+   - `await` é usado para esperar por uma `Promise` dentro de funções `async`.
+   - Exemplo:
+     ```javascript
+     async function buscarDados() {
+       const resposta = await fetch("https://api.exemplo.com/dados");
+       const dados = await resposta.json();
+       console.log(dados);
+     }
+     ```
+
+2. **Manipulação de `Promise`**
+   - `then()`, `catch()`, `finally()` são usados para lidar com o resultado de `Promise`.
+   - Exemplo:
+     ```javascript
+     fetch("https://api.exemplo.com/dados")
+       .then((resposta) => resposta.json())
+       .then((dados) => console.log(dados))
+       .catch((erro) => console.error("Erro:", erro));
+     ```
+
+## Funções Recursivas
+
+1. **Definição**
+
+   - Funções que chamam a si mesmas até que uma condição base seja atingida.
+   - Exemplo de cálculo de fatorial:
+     ```javascript
+     function fatorial(n) {
+       if (n === 0) return 1;
+       return n * fatorial(n - 1);
+     }
+     ```
+
+2. **Considerações**
+   - Uso cuidadoso para evitar estouro de pilha.
+   - Substituível por iterações em muitos casos.

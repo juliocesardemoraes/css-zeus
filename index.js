@@ -1,29 +1,26 @@
-// Exercício 1: Soma de Dois Números
-// Declare duas variáveis numéricas, some-as e imprima o resultado no console.
+// 1. Função de Saudação
+// Crie uma função chamada saudacao que receba um nome como parâmetro e imprima "Olá, [nome]!" no console.
 
-// Exercício 2: Produto de Dois Números
-// Declare duas variáveis numéricas, multiplique-as e imprima o resultado no console.
+// 2. Função de Subtração
+// Crie uma função chamada subtracao que receba dois números como parâmetros e retorne a diferença entre eles.
 
-// Exercício 3: Divisão e Resto
-// Divida um número por outro e imprima o resto.
+// 3. Função de Multiplicação
+// Crie uma função chamada multiplicacao que receba dois números e retorne o produto deles.
 
-// Exercício 4: Incremento e Decremento
-// Incremente e depois decremente um número, imprimindo o valor a cada passo.
+// 4. Função de Concatenar Strings
+// Crie uma função chamada concatenar que receba duas strings e retorne a concatenação delas.
 
-// Exercício 5: Potenciação
-// Calcule o resultado de um número elevado a outro número.
+// 5. Função para Encontrar o Maior Número
+// Crie uma função chamada maiorNumero que receba dois números e retorne o maior deles.
 
-// Exercício 6: Operador de Atribuição Composto
-// Use um operador de atribuição composto para somar e atribuir em uma mesma operação.
+// 6. Função de Verificação de Paridade
+// Crie uma função chamada parouimpar que receba um número e retorne true se for par, false caso contrário.
 
-// Exercício 7: Conversão de String para Número
-// Converta uma string numérica para um número e faça uma operação aritmética com ela.
+// 7. Função de Média
+// Crie uma função chamada media que receba um array de números e retorne a média.
 
-// Exercício 8: Calcular a Área de um Retângulo
-// Calcule a área de um retângulo dado seu comprimento e largura.
+// 8. Função de Conversão para Celsius
+// Crie uma função chamada paraCelsius que converta uma temperatura de Fahrenheit para Celsius.
 
-// Exercício 9: Reduzir um Número pela Metade
-// Divida um número pela metade e imprima o resultado.
-
-// Exercício 10: Calculando a Média
-// Calcule a média de três números e imprima o resultado.
+// 9. Função de Contagem de Caracteres
+// Crie uma função chamada contarCaracteres que receba uma string e retorne um objeto com a contagem de cada caractere.
