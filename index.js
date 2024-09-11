@@ -1,5 +1,5 @@
 // 1. Função de Saudação
-// Crie uma função chamada saudacao que receba um nome como parâmetro e imprima "Olá, [nome]!" no console.
+// Crie uma função chamada saudacao OK que receba um nome como parâmetro OK e imprima "Olá, [nome]!" no console.
 
 // 2. Função de Subtração
 // Crie uma função chamada subtracao que receba dois números como parâmetros e retorne a diferença entre eles.
@@ -18,9 +18,11 @@
 
 // 7. Função de Conversão para Celsius
 // Crie uma função chamada paraCelsius que converta uma temperatura de Fahrenheit para Celsius.
+// "Subtraímos a temperatura em ºF por 32 e dividimos o resultado por 1,8. "
 
 // 8. Função de Contagem de Caracteres
-// Crie uma função chamada contarCaracteres que receba uma string e retorne um objeto com a contagem de todos os caracteres.
+// Crie uma função chamada contarCaracteres que receba uma string 
+// e retorne um numero com a contagem de todos os caracteres.
 
 // 9. Função de Média
-// Crie uma função chamada media que receba um array de números e retorne a média.
+// Crie uma função chamada media que receba um array de números e retorne a média
