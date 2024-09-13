@@ -1,27 +1,52 @@
-console.log("Hello world!")
+let nome = "Maria";
 
-// function soma(valor1, valor2){
-//     console.log(valor1 + valor2)
-// }
+// CRUD - Create Read Update Delete
+// Create
+const carro = {};
+let estudante = {
+  nome: "Maria",
+  idade: 17,
+  serie: "3º ano",
+  notas: {
+    matematica: 8,
+    portugues: 9,
+    historia: 7,
+    fisica: 10,
+  },
+};
+const estudanteMaternal = {
+  nome: "Maria",
+  idade: 17,
+  serie: "pré",
+  notas: {
+    matematica: 8,
+    portugues: 9,
+    historia: 7,
+  },
+};
 
-// soma(1, 2)
-// soma(3, 4)
+// READ
+console.log(estudante.nome);
+const acc = "nome";
+console.log(estudante[acc]);
+console.log(estudante.notas.fisica.nota?.nota2);
+console.log(estudanteMaternal.notas.fisica.nota?.nota2);
 
+// Update
+estudante.nome = "Julio";
+console.log(estudante);
 
-// function sejaBemVindo(nome,idade){
-//     console.log(`O seu nome é ${nome},  e sua idade é ${idade}`)
-// }
+// Delete
+delete estudante.nome;
+console.log(estudante.nome);
+estudante = {};
+console.log(estudante);
 
-// sejaBemVindo("Júlio", 28)
-
-
-
-function multiplicacao(num1,num2){
-    const multi = num1 * num2;
-    console.log("Multi",multi)
-    return multi;
+// Iteração
+for (let chave in estudante) {
+  console.log(chave + ": " + estudante[chave]);
 }
 
-
-const retornoMulti = multiplicacao(2,2)
-console.log("REtorno", retornoMulti)
+for (let chaveNotas in estudante["notas"]) {
+  console.log(chaveNotas + ": " + estudante["notas"][chaveNotas]);
+}

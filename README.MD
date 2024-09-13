@@ -1,177 +1,172 @@
-# Funções em JavaScript
+## Aprofundando em objetos
 
-## Introdução às Funções
+Objetos são um dos conceitos centrais no JavaScript. Eles são usados para armazenar coleções de dados relacionados e funcionalidades.
 
-1. **O que é uma Função?**
+Como já expliquei em outras aulas objetos são estrutura de dados compostas :
 
-   - Um bloco de código projetado para realizar uma tarefa específica.
-   - É reutilizável e pode ser chamado sempre que necessário.
+- **Primitivos**: Dados simples e imutáveis (número, string, boolean, etc.).
+- **Compostos**: Estruturas complexas que podem armazenar múltiplos valores (arrays, objetos).
 
-2. **Declaração de Função**
+### Tipos Primitivos em JavaScript
 
-   - Sintaxe básica: `function nomeDaFuncao() { // código }`
-   - `function + nomeDaFuncao + () + {}`
-   - Exemplo:
-     ```javascript
-     function saudacao() {
-       console.log("Olá, mundo!");
-     }
-     saudacao();
-     ```
+Os **tipos primitivos** são os tipos de dados básicos e imutáveis em JavaScript. Eles são chamados de "primitivos" porque são os blocos fundamentais de dados. Em JavaScript, existem alguns tipos primitivos:
 
-3. **Chamando Funções**
-   - Executar uma função ao referenciá-la seguida de parênteses: `nomeDaFuncao();`
+1. **`string`**: Representa texto.
 
-## Retorno de Funções
+   ```javascript
+   let nome = "João";
+   ```
 
-1. **A Palavra-chave `return`**
+2. **`number`**: Representa números, tanto inteiros quanto de ponto flutuante.
 
-   - Usada para retornar um valor de uma função.
-   - Termina a execução da função.
-   - Exemplo:
-     ```javascript
-     function quadrado(n) {
-       return n * n;
-     }
-     ```
+   ```javascript
+   let idade = 25;
+   let pi = 3.14;
+   ```
 
-2. **Funções Sem Retorno**
-   - Executam uma ação sem retornar um valor (retornam `undefined` implicitamente).
+3. **`boolean`**: Representa valores lógicos: `true` (verdadeiro) ou `false` (falso).
 
-## Parâmetros e Argumentos
+   ```javascript
+   let estaLogado = true;
+   ```
 
-1. **Definindo Parâmetros**
+4. **`undefined`**: Representa a ausência de valor. Variáveis que são declaradas, mas não inicializadas, têm o valor `undefined`.
 
-   - Variáveis listadas na definição de uma função.
-   - Exemplo:
-     ```javascript
-     // Os paramêtros são a e b
-     function soma(a, b) {
-       return a + b;
-     }
-     ```
+   ```javascript
+   let x; // undefined
+   ```
 
-2. **Passando Argumentos**
+5. **`null`**: Representa a ausência intencional de valor. É um valor que pode ser atribuído explicitamente a uma variável.
 
-   - Valores passados para a função quando ela é chamada.
-   - Exemplo:
-     ```javascript
-     // Os paramêtros são a e b
-     function soma(a, b) {
-       // a = 3
-       // b = 4
-       return a + b; // Retorna 7
-     }
-     let resultado = soma(3, 4); // Argumentos são 3 e 4
-     console.log(resultado); // Isso vai retornar 7
-     ```
+   ```javascript
+   let y = null;
+   ```
 
-3. **Parâmetros Padrão**
+### Tipos não tão utilizados
 
-   - Definidos para garantir que parâmetros tenham um valor padrão.
-   - Exemplo:
+6. **`symbol`**: Um valor único e imutável usado como identificador (geralmente avançado).
 
-     ```javascript
-     // Caso a função seja invocada sem nenhum valor o valor da variável b vai ser igual a 2
-     function multiplicar(a, b = 2) {
-       return a * b;
-     }
+   ```javascript
+   let sym = Symbol("id");
+   ```
 
-     multiplicar(1); // Isso vai retornar o valor 2 pois é 1 x 2.
-     ```
+7. **`bigint`**: Um tipo numérico para representar números inteiros muito grandes.
+   ```javascript
+   let bigNumber = 123456789012345678901234567890n;
+   ```
 
-## Funções Anônimas
+### Estruturas de dados compostas
 
-1. **Definição**
+As <b>estruturas de dados compostas</b> em JavaScript permitem armazenar múltiplos valores em uma única variável. As principais estruturas compostas são objetos e arrays.
 
-   - Funções sem nome, atribuídas a variáveis ou usadas como argumentos.
-   - Exemplo:
+### Relembrando estruturas de dados primitivas
 
-     ```javascript
-     const saudacao = function () {
-       console.log("Olá, mundo!");
-     };
-     saudacao();
-     ```
+### O que é um Objeto?
 
-## Arrow Functions
+Em JavaScript, um objeto é uma coleção de pares chave-valor. Cada valor pode ser um dado (número, string, boolean, etc.) ou uma função (que então é chamada de "método").
 
-1. **Sintaxe e Definição**
+```javascript
+const pessoa = {
+  nome: "João",
+  idade: 30,
+};
+```
 
-   - Introduzidas no ES6, são uma forma mais curta de escrever funções.
-   - Sintaxe básica: `const nomeFuncao = (parametros) => { // código }`
-   - Exemplo:
-     ```javascript
-     const soma = (a, b) => a + b;
-     ```
+No exemplo acima:
 
-2. **Características**
+- `nome` e `idade` são **propriedades**. Aliás variáveis primitivas.
 
-   - `this` léxico: Não redefine o valor de `this` dentro da função.
-   - Não possuem `arguments`, `super`, ou `new.target`.
+### Seletores de Propriedades
 
-3. **Uso de Arrow Functions**
-   - Adequadas para callbacks e funções curtas.
-   - Exemplo:
-     ```javascript
-     const numeros = [1, 2, 3];
-     const dobrados = numeros.map((n) => n * 2);
-     ```
+Podemos acessar os valores de um objeto de duas maneiras:
 
-## Funções Imediatamente Invocadas (IIFE)
+1. **Notação de ponto (`.`)**: usada quando a chave do objeto é uma string simples.
 
-1. **Definição**
+   ```javascript
+   console.log(pessoa.nome); // João
+   ```
 
-   - Funções que são executadas assim que definidas.
-   - Sintaxe: `(function() { // código })();`
+2. **Notação de colchetes (`[]`)**: útil quando a chave é armazenada em uma variável ou contém caracteres especiais.
 
-2. **Uso Comum**
-   - Evitar poluição do escopo global.
-   - Exemplo:
-     ```javascript
-     (function () {
-       console.log("IIFE executada!");
-     })();
-     ```
+   ```javascript
+   console.log(pessoa["idade"]); // 30
+   ```
 
-## Funções Assíncronas
+3. **Notação de colchetes para valores dinamicos (`[]`)**: Utilizada para referências dinâmicas.
+   ```javascript
+   console.log(pessoa["idade"]); // 30
+   ```
 
-1. **Funções `async` e `await`**
+### Atribuições
 
-   - Funções declaradas com `async` retornam uma `Promise`.
-   - `await` é usado para esperar por uma `Promise` dentro de funções `async`.
-   - Exemplo:
-     ```javascript
-     async function buscarDados() {
-       const resposta = await fetch("https://api.exemplo.com/dados");
-       const dados = await resposta.json();
-       console.log(dados);
-     }
-     ```
+Podemos alterar os valores de um objeto da mesma forma que os acessamos.
 
-2. **Manipulação de `Promise`**
-   - `then()`, `catch()`, `finally()` são usados para lidar com o resultado de `Promise`.
-   - Exemplo:
-     ```javascript
-     fetch("https://api.exemplo.com/dados")
-       .then((resposta) => resposta.json())
-       .then((dados) => console.log(dados))
-       .catch((erro) => console.error("Erro:", erro));
-     ```
+```javascript
+pessoa.idade = 31;
+console.log(pessoa.idade); // 31
+```
 
-## Funções Recursivas
+### Adicionando Propriedades
 
-1. **Definição**
+Podemos adicionar novas propriedades a um objeto existente.
 
-   - Funções que chamam a si mesmas até que uma condição base seja atingida.
-   - Exemplo de cálculo de fatorial:
-     ```javascript
-     function fatorial(n) {
-       if (n === 0) return 1;
-       return n * fatorial(n - 1);
-     }
-     ```
+```javascript
+pessoa.altura = 1.8; // Adicionando nova propriedade
+```
 
-2. **Considerações**
-   - Uso cuidadoso para evitar estouro de pilha.
-   - Substituível por iterações em muitos casos.
+### Removendo Propriedades
+
+Podemos remover uma propriedade de um objeto usando o operador `delete`.
+
+```javascript
+delete pessoa.altura;
+console.log(pessoa.altura); // undefined
+```
+
+### Iterando Sobre um Objeto
+
+Podemos usar um laço `for...in` para iterar sobre todas as propriedades de um objeto.
+
+```javascript
+for (let chave in pessoa) {
+  console.log(chave + ": " + pessoa[chave]);
+}
+```
+
+### Funções de Objeto
+
+1. **`Object.keys()`**: retorna todas as chaves (propriedades) do objeto.
+
+   ```javascript
+   console.log(Object.keys(pessoa)); // ["nome", "idade"]
+   ```
+
+2. **`Object.values()`**: retorna todos os valores do objeto.
+
+   ```javascript
+   console.log(Object.values(pessoa)); // ["João", 31]
+   ```
+
+3. **`Object.entries()`**: retorna um array de arrays, onde cada subarray contém um par chave-valor.
+   ```javascript
+   console.log(Object.entries(pessoa));
+   // [["nome", "João"], ["idade", 31]]
+   ```
+
+### Resumo
+
+- Objetos são coleções de pares chave-valor.
+- Propriedades podem ser acessadas e modificadas com notação de ponto ou colchetes.
+- Podemos adicionar, modificar e remover propriedades ou métodos.
+
+### Exemplo Completo
+
+```javascript
+const carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2020,
+};
+
+console.log(carro.marca); // Toyota
+```
