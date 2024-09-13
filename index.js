@@ -1,28 +1,24 @@
-// Exercícios de 'CRUD'
-// GET - CREATE/ READ
-// 1. Crie um objeto chamado 'carro' com as propriedades 'marca', 'modelo', e 'ano'.
-// Acesse e imprima cada uma das propriedades no console.
+// 0 - Crie um array de cores com 4 cores,
+// e um array de frutas com os valores ["Banana", "Pera"]
+const cores = ["azul", "vermelho", "roxo", "branco"];
+const frutas = ["Banana", "Pera"];
 
-// POST - INSERT
-// 2. Adicione uma nova propriedade 'cor'
-// ao objeto 'carro' e atribua a ela o valor "vermelho".
+// 1. Acesse o segundo e o último elemento do array 'cores'.
 
-// PUT - UPDATE
-// 3. Modifique o valor da propriedade 'ano' do objeto 'carro' para o ano atual.
+// 2. Adicione "Uva" no final do array 'frutas'.
 
-// DELETE - DELETE
-// 4. Delete a propriedade 'modelo' do objeto 'carro'
-// e tente acessar essa propriedade após a exclusão.
+// 3. Adicione "Manga" no início do array 'frutas'.
 
-// Múltiplos Métodos
-// 5. Crie um objeto chamado 'pessoa' com as propriedades 'nome', 'idade', e 'cidade'.
-// Modifique a 'idade' para ser 5 anos maior.
+// 4. Adicione "Morango" na posição 2 do array 'frutas'.
 
-// 6. Acesse e imprima o valor da propriedade 'nome' do objeto 'pessoa'
-// usando a notação de colchetes.
+// 5. Atualize o terceiro elemento do array 'frutas' para "Laranja".
 
-// 7. Crie um loop 'for...in' para iterar sobre todas as propriedades
-// do objeto 'pessoa' e imprima chave e valor.
+// 6. Remova o último elemento do array 'frutas'.
 
-// 8. Adicione uma nova propriedade 'profissao' ao objeto 'pessoa'
-// e atribua o valor "Engenheira".
+// 7. Remova o primeiro elemento do array 'frutas'.
+
+// 8. Remova o segundo elemento do array 'frutas'. (Desafio) Pode procurar no google
+
+// 9. Use um loop 'for' tradicional para imprimir todos os elementos do array 'frutas'.
+
+// 10. Use 'map' para criar um novo array com todas as frutas em maiúsculas.

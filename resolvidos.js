@@ -1,77 +1,67 @@
-// Exercícios de 'CRUD'
-// GET - CREATE/ READ
-// 1. Crie um objeto chamado 'carro' com as propriedades 'marca', 'modelo', e 'ano'.
-// Acesse e imprima cada uma das propriedades no console.
-const carro = {
-  marca: "marba",
-  modelo: "novo",
-  ano: 2023,
-};
+// 0 - Crie um array de cores com 4 cores,
+// e um array de frutas com os valores ["Banana", "Pera"]
+const cores = ["azul", "vermelho", "roxo", "branco"];
+const frutas = ["Banana", "Pera"];
 
-console.log("EXERCÍCIO 1");
-console.log(carro.ano);
-console.log(carro.modelo);
-console.log(carro.marca);
+// 1. Acesse o segundo e o último elemento do array 'cores'.
+console.log("Exercício 1");
+console.log(cores[2]);
+console.log(cores.at(-1));
+
 console.log("-----------");
 
-// POST - INSERT
-// 2. Adicione uma nova propriedade 'cor'
-// ao objeto 'carro' e atribua a ela o valor "vermelho".
-carro.cor = "vermelho";
-
-console.log("EXERCÍCIO 2");
-console.log(carro.cor);
+// 2. Adicione "Uva" no final do array 'frutas'.
+console.log("Exercício 2");
+frutas.push("Uva");
+console.log(frutas);
 console.log("-----------");
 
-// PUT - UPDATE
-// 3. Modifique o valor da propriedade 'ano' do objeto 'carro' para o ano atual.
-carro.ano = 2024;
-
-console.log("EXERCÍCIO 3");
-console.log(carro.ano);
+// 3. Adicione "Manga" no início do array 'frutas'.
+console.log("Exercício 3");
+frutas.unshift("Manga");
+console.log(frutas);
 console.log("-----------");
 
-// DELETE - DELETE
-// 4. Delete a propriedade 'modelo' do objeto 'carro'
-// e tente acessar essa propriedade após a exclusão.
-delete carro.modelo;
-
-console.log("EXERCÍCIO 4");
-console.log(carro);
+// 4. Adicione "Morango" na posição 2 do array 'frutas'.
+console.log("Exercício 4");
+frutas.splice(2, 0, "Morango");
+console.log(frutas);
 console.log("-----------");
 
-// Múltiplos Métodos
-// 5. Crie um objeto chamado 'pessoa' com as propriedades 'nome', 'idade', e 'cidade'.
-// Modifique a 'idade' para ser 5 anos maior.
-const pessoa = {
-  nome: "júlio",
-  idade: 28,
-  cidade: "Itajubá",
-};
-pessoa.idade += 5;
-
-console.log("EXERCÍCIO 5");
-console.log(pessoa.idade);
+// 5. Atualize o terceiro elemento do array 'frutas' para "Laranja".
+console.log("Exercício 5");
+frutas[3] = "Laranja";
+console.log(frutas);
 console.log("-----------");
 
-// 6. Acesse e imprima o valor da propriedade 'nome' do objeto 'pessoa'
-// usando a notação de colchetes.
-console.log("EXERCÍCIO 6");
-console.log(pessoa["nome"]);
+// 6. Remova o último elemento do array 'frutas'.
+console.log("Exercício 6");
+frutas.pop();
+console.log(frutas);
 console.log("-----------");
 
-// 7. Crie um loop 'for...in' para iterar sobre todas as propriedades
-// do objeto 'pessoa' e imprima chave e valor.
+// 7. Remova o primeiro elemento do array 'frutas'.
+console.log("Exercício 7");
+frutas.shift();
+console.log(frutas);
+console.log("-----------");
 
-console.log("EXERCÍCIO 7");
-for (let chave in pessoa) {
-  console.log(`A chave é ${chave}, e o valor é ${pessoa[chave]}`);
+// 8. Remova o segundo elemento do array 'frutas'. (Desafio) Pode procurar no google
+console.log("Exercício 8");
+frutas.splice(2, 1);
+console.log(frutas);
+console.log("-----------");
+
+// 9. Use um loop 'for' tradicional para imprimir todos os elementos do array 'frutas'.
+console.log("Exercício 9");
+for (let i = 0; i < frutas.length; i++) {
+  console.log("Fruta ", frutas[i]);
 }
 console.log("-----------");
 
-// 8. Adicione uma nova propriedade 'profissao' ao objeto 'pessoa'
-// e atribua o valor "Engenheira".
-console.log("EXERCÍCIO 8");
-pessoa.profissao = "Engenheira";
-console.log(pessoa.profissao);
+// 10. Use 'map' para criar um novo array com todas as frutas em maiúsculas.
+console.log("Exercício 10");
+frutas.map((item) => {
+  console.log(item);
+});
 console.log("-----------");

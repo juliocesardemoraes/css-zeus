@@ -1,172 +1,165 @@
-## Aprofundando em objetos
+## **Arrays em JavaScript**
 
-Objetos são um dos conceitos centrais no JavaScript. Eles são usados para armazenar coleções de dados relacionados e funcionalidades.
+Um **array** é uma estrutura de dados que permite armazenar vários valores em uma única variável. Em vez de declarar várias variáveis individuais para armazenar cada dado, você pode usar um array para agrupar todos esses valores.
 
-Como já expliquei em outras aulas objetos são estrutura de dados compostas :
+### **Criando Arrays**
 
-- **Primitivos**: Dados simples e imutáveis (número, string, boolean, etc.).
-- **Compostos**: Estruturas complexas que podem armazenar múltiplos valores (arrays, objetos).
-
-### Tipos Primitivos em JavaScript
-
-Os **tipos primitivos** são os tipos de dados básicos e imutáveis em JavaScript. Eles são chamados de "primitivos" porque são os blocos fundamentais de dados. Em JavaScript, existem alguns tipos primitivos:
-
-1. **`string`**: Representa texto.
-
-   ```javascript
-   let nome = "João";
-   ```
-
-2. **`number`**: Representa números, tanto inteiros quanto de ponto flutuante.
-
-   ```javascript
-   let idade = 25;
-   let pi = 3.14;
-   ```
-
-3. **`boolean`**: Representa valores lógicos: `true` (verdadeiro) ou `false` (falso).
-
-   ```javascript
-   let estaLogado = true;
-   ```
-
-4. **`undefined`**: Representa a ausência de valor. Variáveis que são declaradas, mas não inicializadas, têm o valor `undefined`.
-
-   ```javascript
-   let x; // undefined
-   ```
-
-5. **`null`**: Representa a ausência intencional de valor. É um valor que pode ser atribuído explicitamente a uma variável.
-
-   ```javascript
-   let y = null;
-   ```
-
-### Tipos não tão utilizados
-
-6. **`symbol`**: Um valor único e imutável usado como identificador (geralmente avançado).
-
-   ```javascript
-   let sym = Symbol("id");
-   ```
-
-7. **`bigint`**: Um tipo numérico para representar números inteiros muito grandes.
-   ```javascript
-   let bigNumber = 123456789012345678901234567890n;
-   ```
-
-### Estruturas de dados compostas
-
-As <b>estruturas de dados compostas</b> em JavaScript permitem armazenar múltiplos valores em uma única variável. As principais estruturas compostas são objetos e arrays.
-
-### Relembrando estruturas de dados primitivas
-
-### O que é um Objeto?
-
-Em JavaScript, um objeto é uma coleção de pares chave-valor. Cada valor pode ser um dado (número, string, boolean, etc.) ou uma função (que então é chamada de "método").
+Você pode criar um array em JavaScript de várias maneiras. Aqui estão os exemplos mais comuns:
 
 ```javascript
-const pessoa = {
-  nome: "João",
-  idade: 30,
-};
+let frutas = ["Maçã", "Banana", "Laranja"];
+let numeros = [1, 2, 3, 4, 5];
 ```
 
-No exemplo acima:
+### **Ler Elementos do Array**
 
-- `nome` e `idade` são **propriedades**. Aliás variáveis primitivas.
-
-### Seletores de Propriedades
-
-Podemos acessar os valores de um objeto de duas maneiras:
-
-1. **Notação de ponto (`.`)**: usada quando a chave do objeto é uma string simples.
-
-   ```javascript
-   console.log(pessoa.nome); // João
-   ```
-
-2. **Notação de colchetes (`[]`)**: útil quando a chave é armazenada em uma variável ou contém caracteres especiais.
-
-   ```javascript
-   console.log(pessoa["idade"]); // 30
-   ```
-
-3. **Notação de colchetes para valores dinamicos (`[]`)**: Utilizada para referências dinâmicas.
-   ```javascript
-   console.log(pessoa["idade"]); // 30
-   ```
-
-### Atribuições
-
-Podemos alterar os valores de um objeto da mesma forma que os acessamos.
+Os elementos do array são indexados começando de `0`. Para acessar um valor, usamos o índice.
 
 ```javascript
-pessoa.idade = 31;
-console.log(pessoa.idade); // 31
+let frutas = ["Maçã", "Banana", "Laranja"];
+
+// Acessar o primeiro elemento
+console.log(frutas[0]); // "Maçã"
+
+// Acessar o terceiro elemento
+console.log(frutas[2]); // "Laranja"
 ```
 
-### Adicionando Propriedades
+### **Inserir Elementos no Array**
 
-Podemos adicionar novas propriedades a um objeto existente.
+Existem várias maneiras de adicionar elementos a um array:
+
+#### 1. **Inserir no Final (`push`)**
 
 ```javascript
-pessoa.altura = 1.8; // Adicionando nova propriedade
+let frutas = ["Maçã", "Banana"];
+frutas.push("Laranja"); // Adiciona "Laranja" ao final do array
+console.log(frutas); // ["Maçã", "Banana", "Laranja"]
 ```
 
-### Removendo Propriedades
-
-Podemos remover uma propriedade de um objeto usando o operador `delete`.
+#### 2. **Inserir no Início (`unshift`)**
 
 ```javascript
-delete pessoa.altura;
-console.log(pessoa.altura); // undefined
+let frutas = ["Maçã", "Banana"];
+frutas.unshift("Laranja"); // Adiciona "Laranja" no início do array
+console.log(frutas); // ["Laranja", "Maçã", "Banana"]
 ```
 
-### Iterando Sobre um Objeto
-
-Podemos usar um laço `for...in` para iterar sobre todas as propriedades de um objeto.
+#### 3. **Inserir em Posições Específicas (`splice`)**
 
 ```javascript
-for (let chave in pessoa) {
-  console.log(chave + ": " + pessoa[chave]);
+let frutas = ["Maçã", "Banana"];
+frutas.splice(1, 0, "Laranja"); // Adiciona "Laranja" na posição 1
+console.log(frutas); // ["Maçã", "Laranja", "Banana"]
+```
+
+### **Atualizar Elementos no Array**
+
+Para atualizar um elemento, você pode atribuir um novo valor diretamente ao índice correspondente.
+
+```javascript
+let frutas = ["Maçã", "Banana", "Laranja"];
+
+// Atualizar o segundo elemento
+frutas[1] = "Uva";
+console.log(frutas); // ["Maçã", "Uva", "Laranja"]
+```
+
+### **Remover Elementos do Array**
+
+#### 1. **Remover do Final (`pop`)**
+
+```javascript
+let frutas = ["Maçã", "Banana", "Laranja"];
+frutas.pop(); // Remove o último elemento ("Laranja")
+console.log(frutas); // ["Maçã", "Banana"]
+```
+
+#### 2. **Remover do Início (`shift`)**
+
+```javascript
+let frutas = ["Maçã", "Banana", "Laranja"];
+frutas.shift(); // Remove o primeiro elemento ("Maçã")
+console.log(frutas); // ["Banana", "Laranja"]
+```
+
+#### 3. **Remover de Posições Específicas (`splice`)**
+
+```javascript
+let frutas = ["Maçã", "Banana", "Laranja"];
+frutas.splice(1, 1); // Remove 1 elemento a partir da posição 1 ("Banana")
+console.log(frutas); // ["Maçã", "Laranja"]
+```
+
+### **Iterando Sobre Arrays (Loops)**
+
+#### 1. **`for` Tradicional**
+
+O `for` loop é um dos métodos mais comuns para percorrer um array.
+
+```javascript
+let frutas = ["Maçã", "Banana", "Laranja"];
+
+for (let i = 0; i < frutas.length; i++) {
+  console.log(frutas[i]); // Acessa cada elemento
 }
 ```
 
-### Funções de Objeto
+#### 2. **`for...of` (Mais Simples)**
 
-1. **`Object.keys()`**: retorna todas as chaves (propriedades) do objeto.
-
-   ```javascript
-   console.log(Object.keys(pessoa)); // ["nome", "idade"]
-   ```
-
-2. **`Object.values()`**: retorna todos os valores do objeto.
-
-   ```javascript
-   console.log(Object.values(pessoa)); // ["João", 31]
-   ```
-
-3. **`Object.entries()`**: retorna um array de arrays, onde cada subarray contém um par chave-valor.
-   ```javascript
-   console.log(Object.entries(pessoa));
-   // [["nome", "João"], ["idade", 31]]
-   ```
-
-### Resumo
-
-- Objetos são coleções de pares chave-valor.
-- Propriedades podem ser acessadas e modificadas com notação de ponto ou colchetes.
-- Podemos adicionar, modificar e remover propriedades ou métodos.
-
-### Exemplo Completo
+O `for...of` loop facilita a leitura de arrays sem a necessidade de um índice.
 
 ```javascript
-const carro = {
-  marca: "Toyota",
-  modelo: "Corolla",
-  ano: 2020,
-};
+let frutas = ["Maçã", "Banana", "Laranja"];
 
-console.log(carro.marca); // Toyota
+for (let fruta of frutas) {
+  console.log(fruta); // Acessa cada elemento diretamente
+}
 ```
+
+#### 3. **`forEach`**
+
+O método `forEach` é uma maneira funcional de percorrer arrays.
+
+```javascript
+let frutas = ["Maçã", "Banana", "Laranja"];
+
+frutas.forEach(function (fruta) {
+  console.log(fruta); // Acessa cada elemento diretamente
+});
+```
+
+#### 4. **`map`**
+
+O `map` também percorre os elementos do array, mas cria um **novo array** com base nos resultados da função aplicada a cada elemento.
+
+```javascript
+let numeros = [1, 2, 3, 4, 5];
+
+let dobrados = numeros.map(function (numero) {
+  return numero * 2; // Multiplica cada elemento por 2
+});
+
+console.log(dobrados); // [2, 4, 6, 8, 10]
+```
+
+### **Dicas Adicionais**
+
+- **Tamanho do Array**: Você pode verificar o tamanho do array usando `length`.
+
+  ```javascript
+  let frutas = ["Maçã", "Banana"];
+  console.log(frutas.length); // 2
+  ```
+
+- **Arrays Multidimensionais**: Arrays podem conter outros arrays, formando uma estrutura de matriz.
+
+  ```javascript
+  let matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
+
+  console.log(matriz[0][1]); // Acessa o elemento 2 da primeira linha: 2
+  ```
