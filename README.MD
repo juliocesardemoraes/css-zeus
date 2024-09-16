@@ -1,121 +1,296 @@
-# Resumo das aulas de Objeto e Array
+## Estruturas Condicionais em JavaScript
 
-## Array
+### 1. `if` Statement
 
-### 1. Criação (Create)
+A estrutura `if` permite que você execute um bloco de código somente se uma condição especificada for verdadeira.
 
-Para criar um novo item em um array, usamos o método `push()`.
-
-```javascript
-let frutas = []; // Array vazio
-frutas.push("Maçã"); // Adiciona "Maçã" ao array
-console.log(frutas); // ["Maçã"]
-```
-
-### 2. Leitura (Read)
-
-Para ler um valor de um array, acessamos o item pelo seu índice.
+**Sintaxe:**
 
 ```javascript
-let frutas = ["Maçã", "Banana"];
-console.log(frutas[0]); // "Maçã"
-```
-
-Para lermos todos os valores de um array de forma dinâmica precisamos de um loop.
-
-```javascript
-let frutas = ["Maçã", "Banana"];
-
-// Explicando o for loop
-
-// 1 - let i = 0; // Inicializa a varíavel de contador que vai ser usado no loop
-
-// 2 - i < frutas.length; // Condição de até onde o loop vai, nesse caso length = 2. Então
-// o loop vai de 0 até o valor 1 (0 -> 1), porque a condição é que seja menor do que 2.
-
-// 3 - i++ // O que será feito no final de cada vez que passamos pelo laço. Nesse caso
-// o i vai aumentar em 1.
-
-for (let i = 0; i < frutas.length; i++) {
-  console.log(frutas[i]);
+if (condição) {
+  // código a ser executado se a condição for verdadeira
 }
 ```
 
-Podemos fazer o loop utilizando map também!
+**Exemplo:**
 
 ```javascript
-let frutas = ["Maçã", "Banana"];
+let idade = 18;
 
-frutas.map((item) => {
-  console.log(item);
-});
+if (idade >= 18) {
+  console.log("Você é maior de idade.");
+}
 ```
 
-### 3. Atualização (Update)
+_Saída:_
 
-Para atualizar um item em um array, acessamos o índice e atribuímos um novo valor.
+```
+Você é maior de idade.
+```
+
+### 2. `if...else` Statement
+
+A estrutura `if...else` permite que você execute um bloco de código se a condição for verdadeira e outro bloco se a condição for falsa.
+
+**Sintaxe:**
 
 ```javascript
-let frutas = ["Maçã", "Banana"];
-frutas[1] = "Laranja"; // Atualiza "Banana" para "Laranja"
-console.log(frutas); // ["Maçã", "Laranja"]
+if (condição) {
+  // código a ser executado se a condição for verdadeira
+} else {
+  // código a ser executado se a condição for falsa
+}
 ```
 
-### 4. Deleção (Delete)
-
-Para remover um item de um array, usamos o método `splice()`.
+**Exemplo:**
 
 ```javascript
-let frutas = ["Maçã", "Banana"];
-frutas.splice(1, 1); // Remove 1 item a partir do índice 1 (remove a "Banana")
-console.log(frutas); // ["Maçã"]
+let idade = 16;
+
+if (idade >= 18) {
+  console.log("Você é maior de idade.");
+} else {
+  console.log("Você é menor de idade.");
+}
 ```
 
-Para remover um último item de um array usamos o método `pop()`
+_Saída:_
+
+```
+Você é menor de idade.
+```
+
+### 3. `if...else if...else` Statement
+
+Para múltiplas condições, você pode encadear várias cláusulas `else if`.
+
+**Sintaxe:**
 
 ```javascript
-let frutas = ["Maçã", "Banana", "Abacaxi"];
-frutas.pop(); // Remove o último item (remove o "Abacaxi")
-console.log(frutas); // ["Maçã", "Banana"]
+if (condição1) {
+  // código se condição1 for verdadeira
+} else if (condição2) {
+  // código se condição2 for verdadeira
+} else {
+  // código se nenhuma das condições anteriores for verdadeira
+}
 ```
 
-## Objetos
-
-### 1. Criação (Create)
-
-Para criar uma nova propriedade em um objeto, basta atribuir um valor à nova chave.
+**Exemplo:**
 
 ```javascript
-let pessoa = {}; // Objeto vazio
-pessoa.nome = "João"; // Adiciona a propriedade "nome"
-console.log(pessoa); // { nome: "João" }
+let nota = 85;
+
+if (nota >= 90) {
+  console.log("A");
+} else if (nota >= 80) {
+  console.log("B");
+} else if (nota >= 70) {
+  console.log("C");
+} else {
+  console.log("F");
+}
 ```
 
-### 2. Leitura (Read)
+_Saída:_
 
-Para ler uma propriedade de um objeto, acessamos pela chave. usando o ponto(.)
+```
+B
+```
+
+## Operadores Lógicos
+
+Os operadores lógicos permitem combinar múltiplas condições.
+
+### 1. AND (`&&`)
+
+Retorna `true` se **todas** as condições forem verdadeiras.
+
+**Exemplo:**
 
 ```javascript
-let pessoa = { nome: "João", idade: 25 };
-console.log(pessoa.nome); // "João"
+let idade = 25;
+let possuiCarteira = true;
+
+if (idade >= 18 && possuiCarteira) {
+  console.log("Pode dirigir.");
+} else {
+  console.log("Não pode dirigir.");
+}
 ```
 
-### 3. Atualização (Update)
+_Saída:_
 
-Para atualizar uma propriedade de um objeto, basta atribuir um novo valor à chave existente. usando o ponto(.)
+```
+Pode dirigir.
+```
+
+### 2. OR (`||`)
+
+||
+
+Retorna `true` se **pelo menos uma** das condições for verdadeira.
+
+**Exemplo:**
 
 ```javascript
-let pessoa = { nome: "João", idade: 25 };
-pessoa.idade = 26; // Atualiza a idade para 26
-console.log(pessoa); // { nome: "João", idade: 26 }
+let dia = "sábado";
+
+if (dia === "sábado" || dia === "domingo") {
+  console.log("É fim de semana.");
+} else {
+  console.log("É dia de semana.");
+}
 ```
 
-### 4. Deleção (Delete)
+_Saída:_
 
-Para deletar uma propriedade de um objeto, usamos a palavra-chave `delete`.
+```
+É fim de semana.
+```
+
+### 3. NOT (`!`)
+
+Inverte o valor booleano de uma condição.
+
+**Exemplo:**
 
 ```javascript
-let pessoa = { nome: "João", idade: 25 };
-delete pessoa.idade; // Remove a propriedade "idade"
-console.log(pessoa); // { nome: "João" }
+let estaChovendo = false;
+
+if (!estaChovendo) {
+  console.log("Você pode sair sem guarda-chuva.");
+} else {
+  console.log("Leve um guarda-chuva.");
+}
 ```
+
+_Saída:_
+
+```
+Você pode sair sem guarda-chuva.
+```
+
+## Pontos de atenção!
+
+1. **Uso Incorreto de Operadores de Comparação:**
+   Um igual `=` comparação, dois iguais `==` comparação de valor, três iguais `===` comparação de valor e tipo
+
+   - Um igual `=`: atribuição
+   - Dois iguais `==`: comparação de valor
+   - Três iguais `===`: comparação de valor e tipo(String,Number,Null,Boolean,etc...)
+
+   - **Erro:** Usar um único `=` ao invés de `==` ou `===` em condições.
+   - **Exemplo:**
+
+     ```javascript
+     let idade = 18; // ATRIBUIÇÃO
+
+     if ((idade = 18)) {
+       // Isso atribui 18 a idade, sempre verdadeiro
+       console.log("Idade igual a 18.");
+     }
+     ```
+
+   - **Correção:**
+     ```javascript
+     if (idade === 18) {
+       console.log("Idade igual a 18.");
+     }
+     ```
+
+2. **Condições Sempre Verdadeiras ou Falsas:**
+
+   - **Erro:** Escrever condições que sempre avaliam para `true` ou `false`.
+   - **Exemplo:**
+
+     ```javascript
+     if (5 > 3) {
+       // 5 sempre vai ser maior do que 3 é sempre verdadeira
+       console.log("Isto sempre será exibido.");
+     }
+
+     if (true) {
+       // 5 sempre vai ser maior do que 3 é sempre verdadeira
+       console.log("Isto sempre será exibido.");
+     }
+     ```
+
+   - **Correção:** Certifique-se de que as condições são baseadas em variáveis ou expressões dinâmicas.
+
+3. **Tipos de Dados Diferentes em Comparações:**
+
+   - **Erro:** Comparar valores de tipos diferentes sem cuidado pode levar a resultados inesperados.
+   - **Exemplo:**
+     ```javascript
+     let numero = "5";
+     if (numero === 5) {
+       // Falso, porque tipos são diferentes
+       console.log("É igual.");
+     } else {
+       console.log("Não é igual.");
+     }
+     ```
+   - **Saída:**
+     ```
+     Não é igual.
+     ```
+   - **Solução:** Use `===` para comparação estrita ou converta os tipos apropriadamente.
+
+4. **Uso Incorreto de `else if`:**
+
+   - **Erro:** Escrever `elseif` ou outros formatos incorretos.
+   - **Exemplo:**
+     ```javascript
+     if (condição1) {
+         // ...
+     } elseif (condição2) { // Incorreto
+         // ...
+     }
+     ```
+   - **Correção:** Use `else if` separado.
+     ```javascript
+     if (condição1) {
+       // ...
+     } else if (condição2) {
+       // ...
+     }
+     ```
+
+5. **Esquecendo de Finalizar Com `else`:**
+
+   - **Erro:** Não fornecer um bloco `else` quando necessário pode deixar casos não tratados.
+   - **Exemplo:**
+
+     ```javascript
+     let score = 75;
+
+     if (score >= 90) {
+       console.log("A");
+     } else if (score >= 80) {
+       console.log("B");
+     }
+     // O que acontece se score for 70?
+     ```
+
+   - **Solução:** Sempre considere um `else` para tratar todos os casos.
+     ```javascript
+     if (score >= 90) {
+       console.log("A");
+     } else if (score >= 80) {
+       console.log("B");
+     } else {
+       console.log("C ou abaixo.");
+     }
+     ```
+
+## Dicas para Evitar Pegadinhas
+
+- **Dê preferência aos operadores `===` e `!==`:** Prefira a comparação estrita para evitar conversões de tipo inesperadas.
+
+  ```javascript
+  if (valor === 10) {
+    // Melhor do que valor == 10
+    // ...
+  }
+  ```
