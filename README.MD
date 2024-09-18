@@ -1,172 +1,169 @@
-## Aprofundando em objetos
+## Aula de DOM(Document Object Model)
 
-Objetos são um dos conceitos centrais no JavaScript. Eles são usados para armazenar coleções de dados relacionados e funcionalidades.
+O DOM (Document Object Model) é uma interface de programação que permite manipular documentos HTML e XML. Ele representa a página web como uma estrutura de árvore, onde cada nó é um objeto que pode ser manipulado por meio de JavaScript. A árvore do DOM inclui elementos HTML, seus atributos e o texto dentro dos elementos. Através do DOM, você pode acessar e modificar o conteúdo, estrutura e estilo de uma página web dinamicamente.
 
-Como já expliquei em outras aulas objetos são estrutura de dados compostas :
+### 1. **Acessando Elementos (GET)**
 
-- **Primitivos**: Dados simples e imutáveis (número, string, boolean, etc.).
-- **Compostos**: Estruturas complexas que podem armazenar múltiplos valores (arrays, objetos).
+Para acessar elementos no DOM, o JavaScript oferece vários métodos, sendo os mais comuns:
 
-### Tipos Primitivos em JavaScript
+- **`document.getElementById()`**: Seleciona um elemento pelo seu `id`.
 
-Os **tipos primitivos** são os tipos de dados básicos e imutáveis em JavaScript. Eles são chamados de "primitivos" porque são os blocos fundamentais de dados. Em JavaScript, existem alguns tipos primitivos:
+  ```javascript
+  const elemento = document.getElementById("meuElemento");
+  ```
 
-1. **`string`**: Representa texto.
+- **`document.getElementsByClassName()`**: Retorna uma lista de elementos que possuem uma determinada classe.
 
-   ```javascript
-   let nome = "João";
-   ```
+  ```javascript
+  const elementos = document.getElementsByClassName("minhaClasse");
+  ```
 
-2. **`number`**: Representa números, tanto inteiros quanto de ponto flutuante.
+- **`document.getElementsByTagName()`**: Seleciona todos os elementos de uma determinada tag.
 
-   ```javascript
-   let idade = 25;
-   let pi = 3.14;
-   ```
+  ```javascript
+  const paragrafo = document.getElementsByTagName("p");
+  ```
 
-3. **`boolean`**: Representa valores lógicos: `true` (verdadeiro) ou `false` (falso).
+- **`document.querySelector()`**: Seleciona o primeiro elemento que corresponde a um seletor CSS.
 
-   ```javascript
-   let estaLogado = true;
-   ```
+  ```javascript
+  const elemento = document.querySelector(".minhaClasse");
+  ```
 
-4. **`undefined`**: Representa a ausência de valor. Variáveis que são declaradas, mas não inicializadas, têm o valor `undefined`.
+- **`document.querySelectorAll()`**: Seleciona todos os elementos que correspondem a um seletor CSS.
+  ```javascript
+  const elementos = document.querySelectorAll(".minhaClasse");
+  ```
 
-   ```javascript
-   let x; // undefined
-   ```
+### 2. **Alterando Elementos**
 
-5. **`null`**: Representa a ausência intencional de valor. É um valor que pode ser atribuído explicitamente a uma variável.
+Você pode modificar o conteúdo, os atributos e até o estilo de elementos do DOM.
 
-   ```javascript
-   let y = null;
-   ```
+- **Alterar o conteúdo (texto ou HTML interno)**:
 
-### Tipos não tão utilizados
+  - **`innerHTML`**: Modifica o conteúdo HTML de um elemento.
 
-6. **`symbol`**: Um valor único e imutável usado como identificador (geralmente avançado).
+    ```javascript
+    elemento.innerHTML = "<strong>Texto alterado</strong>";
+    ```
 
-   ```javascript
-   let sym = Symbol("id");
-   ```
+  - **`textContent`**: Modifica apenas o texto de um elemento, sem interpretar como HTML.
+    ```javascript
+    elemento.textContent = "Novo texto";
+    ```
 
-7. **`bigint`**: Um tipo numérico para representar números inteiros muito grandes.
-   ```javascript
-   let bigNumber = 123456789012345678901234567890n;
-   ```
+- **Modificar atributos**:
 
-### Estruturas de dados compostas
+  - **`setAttribute()`**: Altera ou define um novo atributo em um elemento.
 
-As <b>estruturas de dados compostas</b> em JavaScript permitem armazenar múltiplos valores em uma única variável. As principais estruturas compostas são objetos e arrays.
+    ```javascript
+    elemento.setAttribute("class", "novaClasse");
+    ```
 
-### Relembrando estruturas de dados primitivas
+  - **Modificar diretamente propriedades**:
+    ```javascript
+    elemento.id = "novoId";
+    elemento.src = "novaImagem.jpg"; // Exemplo para uma tag <img>
+    ```
 
-### O que é um Objeto?
+### 3. **Inserindo Elementos**
 
-Em JavaScript, um objeto é uma coleção de pares chave-valor. Cada valor pode ser um dado (número, string, boolean, etc.) ou uma função (que então é chamada de "método").
+- **`appendChild()`**: Insere um novo elemento como filho de um elemento existente.
 
-```javascript
-const pessoa = {
-  nome: "João",
-  idade: 30,
-};
-```
+  ```javascript
+  const novoParagrafo = document.createElement("p");
+  novoParagrafo.textContent = "Novo parágrafo!";
+  elemento.appendChild(novoParagrafo);
+  ```
 
-No exemplo acima:
+- **`append()`**: É mais flexível que appendChild() porque pode adicionar múltiplos nós de uma vez e permite adicionar conteúdo de texto.
 
-- `nome` e `idade` são **propriedades**. Aliás variáveis primitivas.
+  ```javascript
+  const outroElemento = document.createElement("p");
+  outroElemento.textContent = "Mais um novo elemento";
 
-### Seletores de Propriedades
+  pai.append(outroElemento, " Texto adicional");
 
-Podemos acessar os valores de um objeto de duas maneiras:
+  // Ou como alternativa
+  pai.append("Adiciona um texto qualquer no DOM");
+  ```
 
-1. **Notação de ponto (`.`)**: usada quando a chave do objeto é uma string simples.
+- **`insertBefore()`**: Insere um elemento antes de um elemento de referência.
 
-   ```javascript
-   console.log(pessoa.nome); // João
-   ```
+  ```javascript
+  const referencia = document.getElementById("referencia");
+  elemento.insertBefore(novoParagrafo, referencia);
+  ```
 
-2. **Notação de colchetes (`[]`)**: útil quando a chave é armazenada em uma variável ou contém caracteres especiais.
+- **`insertAdjacentHTML()`**: Insere HTML em uma posição específica relativa ao elemento.
+  ```javascript
+  elemento.insertAdjacentHTML("beforeend", "<p>Texto inserido no final.</p>");
+  ```
 
-   ```javascript
-   console.log(pessoa["idade"]); // 30
-   ```
+### 4. **Deletando Elementos**
 
-3. **Notação de colchetes para valores dinamicos (`[]`)**: Utilizada para referências dinâmicas.
-   ```javascript
-   console.log(pessoa["idade"]); // 30
-   ```
+- **`removeChild()`**: Remove um elemento filho de um nó.
 
-### Atribuições
+  ```javascript
+  const pai = document.getElementById("container");
+  const filho = document.getElementById("filhoParaRemover");
 
-Podemos alterar os valores de um objeto da mesma forma que os acessamos.
+  pai.removeChild(filho);
+  ```
 
-```javascript
-pessoa.idade = 31;
-console.log(pessoa.idade); // 31
-```
+- **`remove()`**: Remove o próprio elemento.
+  ```javascript
+  const elementoParaRemover = document.getElementById("elementoRemover");
+  elementoParaRemover.remove();
+  ```
 
-### Adicionando Propriedades
+### 5. **Estilizando Elementos**
 
-Podemos adicionar novas propriedades a um objeto existente.
+O estilo de um elemento pode ser alterado diretamente via DOM:
 
-```javascript
-pessoa.altura = 1.8; // Adicionando nova propriedade
-```
+- **Através da propriedade `style`**:
 
-### Removendo Propriedades
+  ```javascript
+  elemento.style.color = "red";
+  elemento.style.backgroundColor = "blue";
+  ```
 
-Podemos remover uma propriedade de um objeto usando o operador `delete`.
+- **Adicionando/removendo classes**:
 
-```javascript
-delete pessoa.altura;
-console.log(pessoa.altura); // undefined
-```
+  - **`classList.add()`**: Adiciona uma nova classe a um elemento.
 
-### Iterando Sobre um Objeto
+    ```javascript
+    elemento.classList.add("novaClasse");
+    ```
 
-Podemos usar um laço `for...in` para iterar sobre todas as propriedades de um objeto.
+  - **`classList.remove()`**: Remove uma classe existente.
 
-```javascript
-for (let chave in pessoa) {
-  console.log(chave + ": " + pessoa[chave]);
-}
-```
+    ```javascript
+    elemento.classList.remove("classeExistente");
+    ```
 
-### Funções de Objeto
+  - **`classList.toggle()`**: Alterna uma classe, adicionando-a se não existir, ou removendo-a se já existir.
+    ```javascript
+    elemento.classList.toggle("classeAtiva");
+    ```
 
-1. **`Object.keys()`**: retorna todas as chaves (propriedades) do objeto.
+### 6. **Outros Conceitos Importantes**
 
-   ```javascript
-   console.log(Object.keys(pessoa)); // ["nome", "idade"]
-   ```
+- **Eventos**: Você pode associar manipuladores de eventos a elementos DOM para reagir a interações do usuário, como cliques e teclas pressionadas.
 
-2. **`Object.values()`**: retorna todos os valores do objeto.
+  ```javascript
+  elemento.addEventListener("click", () => {
+    alert("Elemento clicado!");
+  });
+  ```
 
-   ```javascript
-   console.log(Object.values(pessoa)); // ["João", 31]
-   ```
+- **Navegação pelo DOM**: Você pode navegar entre os nós do DOM com propriedades como:
 
-3. **`Object.entries()`**: retorna um array de arrays, onde cada subarray contém um par chave-valor.
-   ```javascript
-   console.log(Object.entries(pessoa));
-   // [["nome", "João"], ["idade", 31]]
-   ```
+  - `parentNode` (nó pai),
+  - `children` (nós filhos),
+  - `nextElementSibling` (próximo elemento no mesmo nível).
 
-### Resumo
-
-- Objetos são coleções de pares chave-valor.
-- Propriedades podem ser acessadas e modificadas com notação de ponto ou colchetes.
-- Podemos adicionar, modificar e remover propriedades ou métodos.
-
-### Exemplo Completo
-
-```javascript
-const carro = {
-  marca: "Toyota",
-  modelo: "Corolla",
-  ano: 2020,
-};
-
-console.log(carro.marca); // Toyota
-```
+- **Manipulação de Formulários**: O DOM permite acessar e modificar facilmente os valores de formulários, como `input`, `textarea` e `select`.
+  ```javascript
+  const inputValor = document.querySelector("input").value;
+  ```

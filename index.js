@@ -1,28 +1,28 @@
-// Exercícios de 'CRUD'
-// GET - CREATE/ READ
-// 1. Crie um objeto chamado 'carro' com as propriedades 'marca', 'modelo', e 'ano'.
-// Acesse e imprima cada uma das propriedades no console.
+/*
+      <li>João</li>
+      <li>José</li>
+      <li>Júlio</li>
+      <li>Ibra</li>
+      <li>Joseph</li>
+*/
 
-// POST - INSERT
-// 2. Adicione uma nova propriedade 'cor'
-// ao objeto 'carro' e atribua a ela o valor "vermelho".
+const userList = ["Abrra", "João", "José", "Júlio", "Ibra", "Joseph"];
 
-// PUT - UPDATE
-// 3. Modifique o valor da propriedade 'ano' do objeto 'carro' para o ano atual.
+// CRUD - Criação, leitura(read),
+// atualização(update), deleção
 
-// DELETE - DELETE
-// 4. Delete a propriedade 'modelo' do objeto 'carro'
-// e tente acessar essa propriedade após a exclusão.
+const users = document.getElementById("users");
 
-// Múltiplos Métodos
-// 5. Crie um objeto chamado 'pessoa' com as propriedades 'nome', 'idade', e 'cidade'.
-// Modifique a 'idade' para ser 5 anos maior.
+function addUser(nome, i) {
+  let userTag = document.createElement("li");
+  userTag.textContent = nome;
+  userTag.id = i;
+  users.append(userTag);
+}
 
-// 6. Acesse e imprima o valor da propriedade 'nome' do objeto 'pessoa'
-// usando a notação de colchetes.
+for (let i = 0; i < userList.length; i++) {
+  addUser(userList[i], i);
+}
 
-// 7. Crie um loop 'for...in' para iterar sobre todas as propriedades
-// do objeto 'pessoa' e imprima chave e valor.
-
-// 8. Adicione uma nova propriedade 'profissao' ao objeto 'pessoa'
-// e atribua o valor "Engenheira".
+const userToDelete = document.getElementById("0");
+userToDelete.remove();
