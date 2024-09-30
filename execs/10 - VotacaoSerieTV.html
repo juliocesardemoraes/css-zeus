@@ -1,0 +1,49 @@
+<html>
+  <form onsubmit="criarSerie(event)">
+    <input
+      type="text"
+      name="nome"
+      id="nome"
+      value=""
+      placeholder="Digitar o nome da série"
+    />
+    <button type="submit">Criar Série</button>
+  </form>
+
+  <h2>Lista de séries</h2>
+  <ul id="listadeseries"></ul>
+
+  <script>
+    const listaDeSeries = document.getElementById("listadeseries");
+    let indexTag = 0;
+
+    function criarSerieTag(name, index) {
+      const li = document.createElement("li");
+      li.innerHTML = `
+                ${name}: <span id="votes-${index}">0</span>
+                <button onclick="upvote(${index})">Upvote</button>
+                <button onclick="downvote(${index})">Downvote</button>
+            `;
+      listaDeSeries.append(li);
+    }
+
+    function criarSerie(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      criarSerieTag(formData.get("nome"), indexTag);
+      indexTag++;
+    }
+
+    function upvote(index) {
+      const list = document.getElementById(`votes-${index}`);
+      let counter = Number(list.textContent) + 1;
+      list.textContent = counter;
+    }
+
+    function downvote(index) {
+      const list = document.getElementById(`votes-${index}`);
+      let counter = Number(list.textContent) - 1;
+      list.textContent = counter;
+    }
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<html>
+  <!--Add your HTML code here-->
+  <form onsubmit="criarUsuario(event)">
+    <input
+      type="text"
+      name="nome"
+      id="nome"
+      value=""
+      placeholder="Digite o nome do usuário"
+    />
+    <br />
+    <input
+      type="email"
+      name="email"
+      id="email"
+      value=""
+      placeholder="Digite o email do usuário"
+    />
+    <br />
+    <button type="submit">Criar usuário</button>
+  </form>
+
+  <ul id="listadeusuarios"></ul>
+
+  <script>
+    const list = document.getElementById("listadeusuarios");
+    const users = [];
+
+    function atualizarLista() {
+      list.innerHTML = "";
+      for (let i = 0; i < users.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = `email: ${users[i].email}, nome: ${users[i].nome}`;
+        list.append(listItem);
+      }
+    }
+
+    function criarUsuario(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const userName = formData.get("nome");
+      const userEmail = formData.get("email");
+      users.push({ nome: userName, email: userEmail });
+      atualizarLista();
+    }
+  </script>
+</html>
