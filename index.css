@@ -1,0 +1,30 @@
+h1{
+    color: blue;
+}
+
+.div1{
+    width: 50%;
+    background: red;
+}
+
+.div2{
+    width: 50%;
+    background: blue;
+}
+
+.flex{
+    display: flex;
+}
+
+
+@media only screen and (max-width: 600px) {
+    h1{
+        color: red;
+    }
+    .flex{
+        flex-direction: column;
+    }
+    .flex div{
+        width: 100%;
+    }
+}
