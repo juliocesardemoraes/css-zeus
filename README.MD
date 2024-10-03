@@ -1,1 +1,1 @@
-# Desafios de javascript
+# Calculadora de gorjeta
