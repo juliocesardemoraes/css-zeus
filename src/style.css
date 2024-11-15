@@ -6,3 +6,30 @@
 body{
     background: #222;
 }
+
+
+.loader {
+   width: 24px;
+   height: 24px;
+   border: 3px solid #FFF;
+   border-bottom-color: #3372f9;
+   border-radius: 50%;
+   display: inline-block;
+   box-sizing: border-box;
+   animation: rotation;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0) scale(1.25);
+    }
+    50%{
+        transform: rotate(180deg) scale(2);
+    }
+    100%{
+        transform: rotate(359deg) scale(1.25);
+    }
+}
+
