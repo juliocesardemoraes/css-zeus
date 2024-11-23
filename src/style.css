@@ -5,31 +5,43 @@
 
 body{
     background: #222;
+    color: #fff;
+    padding: 2rem;
 }
 
-
-.loader {
-   width: 24px;
-   height: 24px;
-   border: 3px solid #FFF;
-   border-bottom-color: #3372f9;
-   border-radius: 50%;
-   display: inline-block;
-   box-sizing: border-box;
-   animation: rotation;
-   animation-duration: 2s;
-   animation-iteration-count: infinite;
+.items{
+    margin-left: 2000px;
+    background: #fff;
+    color: #222;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 1rem;
+    transition: 1s all;
 }
 
-@keyframes rotation {
-    0%{
-        transform: rotate(0) scale(1.25);
-    }
-    50%{
-        transform: rotate(180deg) scale(2);
-    }
-    100%{
-        transform: rotate(359deg) scale(1.25);
-    }
+.primary{
+    padding: 2rem;
+    border: 1px solid #fff;
+    transition: 1s background;
 }
+
+.primary:hover{
+    background: #fff;
+    color: #222;
+}
+
+.secundary{
+    padding: 2rem;
+    border: 1px solid #222;
+    transition: 1s background;
+}
+
+.secundary:hover{
+    background: #222;
+    color: #fff;
+}
+
 
