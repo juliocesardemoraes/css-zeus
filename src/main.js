@@ -1,12 +1,18 @@
-const mostrarInfo = () => {
-  const items = document.getElementById("items");
-  items.style.marginLeft = "0px";
-};
+const cards = document.getElementsByClassName("card");
 
-const esconderInfo = () => {
-  const items = document.getElementById("items");
-  items.style.marginLeft = "2000px";
-};
+const observer = new IntersectionObserver(
+  (entries) => {
+    console.log(entries);
 
-window.mostrarInfo = mostrarInfo;
-window.esconderInfo = esconderInfo;
+    for (let i = 0; i < entries.length; i++) {
+      entries[i].target.classList.toggle("show", entries[i].isIntersecting);
+    }
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+for (let i = 0; i < cards.length; i++) {
+  observer.observe(cards[i]);
+}
