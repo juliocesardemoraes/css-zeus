@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Framer Motion</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Javascript module</title>
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,12 +15,38 @@
   </head>
   <body class="h-[100vh]">
     <div id="app"></div>
-    <button onclick="rotate()">Rotacionar</button>
-    <div class="container">
-      <div class="box"></div>
-      <div class="box2"></div>
+    <div></div>
+    <div class="flex justify-center items-center flex-col gap-4">
+      <!-- <span class="loader"></span> -->
+      <h1>Pomodoro</h1>
+
+      <div class="loader-container">
+        <div class="circular-progress">
+          <div class="value-container">0%</div>
+        </div>
+      </div>
+
+      <div
+        class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 m-auto mt-12"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <h5
+            class="text-xl font-bold leading-none text-gray-900 dark:text-white"
+          >
+            Lista de pomodoros
+          </h5>
+        </div>
+        <div class="flow-root">
+          <ul
+            id="pomolist"
+            role="list"
+            class="divide-y divide-gray-200 dark:divide-gray-700"
+          ></ul>
+        </div>
+      </div>
     </div>
-    <!-- <div class="flex justify-center items-center h-full"></div> -->
-    <script type="module" src="./main.js"></script>
+
+    <script type="module" src="./js/progress.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

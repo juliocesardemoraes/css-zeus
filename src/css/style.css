@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+body{
+    background: #222;
+    color: #fff;
+    padding: 2rem;
+}
+
+button{
+    background: #fff;
+    color: #222;
+    padding: 1rem;
+    border-radius: 1rem;
+    opacity: 0.8;
+    transition: 1s all;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.box2{
+    width: 100px;
+    height: 100px;
+    background: green;
+    border-radius: 1rem;
+}
+
+.container{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+ }
+
+.circular-progress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.circular-progress:before{
+    content: "";
+    position: absolute;
+    width: 84%;
+    height: 84%;
+    background: #222;
+    border-radius: 50%;
+}
+
+.value-container{
+    position:relative;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.icon{
+    width: 16px;
+    height: 16px;
+    fill: #fff !important;
+    color: #fff !important;
+}
