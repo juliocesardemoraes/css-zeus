@@ -1,17 +1,21 @@
 // setTimeout(function, delay, ...args)
+const progressBar = document.getElementsByClassName("circular-progress")[0];
+const valueContainer = document.getElementsByClassName("value-container")[0];
+
 let counter = 0;
 
-const incrementCounter = (message) => {
+const idInterval = setInterval(() => {
   counter++;
-  console.log(message + counter);
-
-  if (counter > 3) {
-    clearTimeout(idCounterTimeout);
+  if (counter <= 100) {
+    valueContainer.textContent = `${counter}%`;
+  } else {
+    clearInterval(idInterval);
   }
-};
 
-const idCounterTimeout = setTimeout(incrementCounter, 1000);
+  progressBar.style.background = `conic-gradient(#D01D2C ${
+    counter * 3.6
+  }deg, #F2EEE3 ${counter * 7.2}deg)`;
+}, 1000);
 
-clearTimeout(idCounterTimeout);
-
-const idCounterInterval = setInterval(incrementCounter, 1000, "Timeout 1: ");
+// #D01D2C
+//  #F2EEE3
