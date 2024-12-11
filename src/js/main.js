@@ -1,12 +1,18 @@
-const types = document.getElementsByClassName("type");
+// Pegar dados do textarea
+const textareaContent = document.getElementById("message");
 
-const text =
-  "Olá meu nome é júlio, e vou te ensinar a construir um efeito de teclado muito legal!😎";
+const saveData = () => {
+  console.log("CHAMOu", textareaContent.value);
+  // Guardar no localstorage - OK
+  localStorage.setItem("notas", textareaContent.value);
+};
 
-console.log(text[1]);
+// Quando iniciar pegar os dados guardados
+// e popular textarea
+const fetchData = () => {
+  console.log("Fetch", textareaContent.value);
+  textareaContent.value = localStorage.getItem("notas");
+};
 
-for (let i = 0; i < text.length; i++) {
-  setTimeout(() => {
-    types[0].textContent += text[i];
-  }, 50 * i);
-}
+window.saveData = saveData;
+window.fetchData = fetchData;
