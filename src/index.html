@@ -13,19 +13,10 @@
       rel="stylesheet"
     />
   </head>
-  <body class="h-[100vh]" onload="fetchData()">
-    <label
-      for="message"
-      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >Sua mensagem</label
-    >
-    <textarea
-      id="message"
-      rows="12"
-      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      placeholder="Digite sua lista aqui..."
-      onkeyup="saveData()"
-    ></textarea>
+  <body class="h-[100vh]">
+    <h1>Piadas de tiozão</h1>
+    <button onclick="fetchData()">Gerar piada</button>
+    <h2 id="piadaresposta"></h2>
   </body>
   <script type="module" src="./js/main.js"></script>
 </html>

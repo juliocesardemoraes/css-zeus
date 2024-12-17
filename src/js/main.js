@@ -1,18 +1,12 @@
-// Pegar dados do textarea
-const textareaContent = document.getElementById("message");
+const domH1 = document.getElementById("piadaresposta");
 
-const saveData = () => {
-  console.log("CHAMOu", textareaContent.value);
-  // Guardar no localstorage - OK
-  localStorage.setItem("notas", textareaContent.value);
+const fetchData = async () => {
+  const res = await fetch("http://localhost:3000/piadas");
+  const data = await res.json();
+
+  domH1.textContent = data.piada.piada;
+
+  console.log(data.piada.piada);
 };
 
-// Quando iniciar pegar os dados guardados
-// e popular textarea
-const fetchData = () => {
-  console.log("Fetch", textareaContent.value);
-  textareaContent.value = localStorage.getItem("notas");
-};
-
-window.saveData = saveData;
 window.fetchData = fetchData;
